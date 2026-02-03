@@ -8,6 +8,7 @@ import fi.dy.masa.litematica.util.PlacementHandler;
 import fi.dy.masa.litematica.world.SchematicWorldHandler;
 import fi.dy.masa.litematica.world.WorldSchematic;
 import me.aleksilassila.litematica.printer.Debug;
+import me.aleksilassila.litematica.printer.Reference;
 import me.aleksilassila.litematica.printer.config.Configs;
 import me.aleksilassila.litematica.printer.enums.BlockCooldownType;
 import me.aleksilassila.litematica.printer.enums.IterationOrderType;
@@ -356,6 +357,8 @@ public class Printer extends PrinterUtils {
                 if (Configs.Placement.PLACE_BLOCKS_PER_TICK.getIntegerValue() != 0) {
                     printerWorkingCountPerTick--;
                 }
+            } else {
+                Reference.LOGGER.warn("Can't find block in Inventory");
             }
         }
     }
